@@ -1,6 +1,4 @@
-# @dagangan/components
-
-> This is react-components libraries bootstrapping with [TSDX](https://tsdx.io/).
+# @makyo/components
 
 ## Requirements
 Before you proceed, please make sure your machine has met the following requirements:
@@ -14,9 +12,9 @@ Before you proceed, please make sure your machine has met the following requirem
 ### Installation
 
 ```bash
-# clone repo into `dgn-react-components`
+# clone repo into `makyo-component`
 # install project dependencies
-cd dgn-react-components && npm install
+cd makyo-component && npm install
 npx husky install
 ```
 
@@ -30,7 +28,7 @@ This builds to `/dist` and runs the project in watch mode so any edits you save 
 
 Then run Storybook for the playground:
 
-### Storybook
+### Running Storybook
 
 Run inside another terminal:
 
@@ -47,7 +45,7 @@ This loads the stories from `./stories`.
 ```bash
 npm run build
 # move to another project (eg: cd ../next-project)
-npm install ../dgn-react-components # (directory of dgn-react-components)
+npm install ../makyo-component # (directory of makyo-component)
 ```
 
 ### Jest
@@ -64,17 +62,17 @@ This is the folder structure we set up for you:
 
 ```txt
 /src
-  index.tsx       # EDIT THIS
+  index.tsx       
 /test
-  blah.test.tsx   # EDIT THIS
+  blah.test.tsx   
 /stories
-  Thing.stories.tsx # EDIT THIS
+  Thing.stories.tsx 
 /.storybook
   main.js
   preview.js
 .gitignore
 package.json
-README.md         # EDIT THIS
+README.md        
 tsconfig.json
 ```
 
