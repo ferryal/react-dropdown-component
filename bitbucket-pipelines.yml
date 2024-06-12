@@ -1,0 +1,53 @@
+image: node:14
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          name: Install dependencies
+          caches:
+            - node
+          script:
+            - npm install
+      - step:
+          name: Code quality
+          caches:
+            - node
+          script:
+            - npm run lint
+      - step:
+          name: Build Storybook
+          caches:
+            - node
+          script:
+            - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
+  branches:
+    development:
+      - step:
+          name: Install dependencies
+          caches:
+            - node
+          script:
+            - npm install
+      - step:
+          name: Publish to Chromatic
+          deployment: staging
+          caches:
+            - node
+          script:
+            - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
+  custom:
+    publish-to-chromatic:
+      - step:
+          name: Install dependencies
+          caches:
+            - node
+          script:
+            - npm install
+      - step:
+          name: Publish to Chromatic
+          deployment: staging
+          caches:
+            - node
+          script:
+            - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
